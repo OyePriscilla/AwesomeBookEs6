@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-books {
+  width: 100%;
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+}
+
+.book-img {
+  padding: 0.5rem;
+}
+
+.listing {
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.book-dynamic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+}
+
+.book-dynamic:nth-child(odd) {
+  background-color: #ccc;
+}
+
+#head-title {
+  margin: 2rem 0;
+}
+
+.line {
+  margin: 2rem;
+  height: 2px;
+  width: 100px;
+  background-color: #000;
+}
+
+.adding-book {
+  margin-top: 2rem;
+}
+
+.adding-book h2 {
+  margin-bottom: 4rem;
+  font-size: 2em;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: none;
+  align-items: flex-end;
+}
+
+.title,
+.author {
+  margin-bottom: 0.8rem;
+  width: 100%;
+  height: 1.5rem;
+  padding-left: 0.4rem;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.time-date {
+  display: block;
+  height: 1.5rem;
+  text-align: right;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+#add-btn {
+  width: 60px;
+  float: right;
+  height: 28px;
+}
+
+.rmv-btn {
+  padding: 0.2rem 0.4rem;
+}
+
+button {
+  box-shadow: 3px 3px rgb(63, 59, 59);
+  border: 1px solid #000;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(109, 108, 108);
+  color: rgb(235, 235, 235);
+}
+
+button:active {
+  box-shadow: 2px 2px rgb(37, 37, 37);
+}
+
+/* Navigation section */
+nav {
+  width: 100%;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  margin-top: 2rem;
+  align-items: center;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 84vh;
+  width: 100%;
+  align-items: center;
+}
+
+.logo {
+  padding: 0.8rem 0 0.8rem 1rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.links-item {
+  list-style: none;
+  margin-left: 1.5rem;
+  border-right: 2px solid black;
+  padding-right: 1rem;
+  line-height: 2.4rem;
+  cursor: pointer;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+.contact-us {
+  margin-top: 2rem;
+}
+
+.contact-us h2 {
+  margin-bottom: 4rem;
+  font-size: 2em;
+}
+
+.contact-us ul {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.contact-us ul li {
+  text-align: left;
+  border-right: none;
+}
+
+footer {
+  border: 2px solid black;
+  position: relative;
+  bottom: 2rem;
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 3px;
+  margin-top: 4rem;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  color: rgb(56, 110, 180);
+  border-bottom: 2px solid rgb(56, 110, 180);
+}
+
+.authors {
+  color: rgb(56, 110, 180);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-button {
+  width: 70px;
+  float: right;
+  padding: 5px;
+  box-shadow: 3px 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
