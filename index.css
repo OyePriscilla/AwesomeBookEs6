@@ -51,7 +51,7 @@ main {
   border-radius: 3px;
 }
 
-.single-book {
+.book-dynamic {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +59,7 @@ main {
   padding: 0.4rem 0.8rem 0.4rem 0.4rem;
 }
 
-.single-book:nth-child(odd) {
+.book-dynamic:nth-child(odd) {
   background-color: #ccc;
 }
 
@@ -222,5 +222,14 @@ footer {
 .authors {
   color: rgb(56, 110, 180);
   font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-button {
+  width: 70px;
+  float: right;
+  padding: 5px;
+  box-shadow: 3px 3px;
+  background-color: #fff;
   cursor: pointer;
 }

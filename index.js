@@ -7,7 +7,7 @@ import { DateTime } from './modules/luxon.js';
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const addButton = document.getElementById('add-btn');
-const booksList = document.getElementById('books-list');
+const bookDiv = document.getElementById('book-div');
 let id = 0;
 
 class Book {
@@ -19,13 +19,13 @@ class Book {
 
   static addBook(newBook) {
     const book = document.createElement('div');
-    book.classList.add('single-book');
+    book.classList.add('book-dynamic');
     newBook.bookId = id;
     book.innerHTML = `
       <p>"${newBook.bookTitle}" by ${newBook.bookAuthor}</p>
-      <button class="rmv-btn delete" id="${id}">Remove</button>
+      <button class="remove-button remove-btn" id="${id}">Remove</button>
     `;
-    booksList.appendChild(book);
+    bookDiv.appendChild(book);
     id += 1;
   }
 
@@ -53,29 +53,29 @@ class Book {
   static removeBook(bookId) {
     const books = Book.getBooks();
     bookId = parseInt(bookId, 10);
-    let newArrayBooks = [];
+    let bookArray = [];
     books.forEach((book, index) => {
       if (book.bookId === bookId) {
         books.splice(index, 1);
       }
     });
     localStorage.setItem('books', JSON.stringify(books));
-    newArrayBooks = this.getBooks();
-    if (newArrayBooks.length === 1) {
-      if (newArrayBooks[0].bookId > 0) {
-        newArrayBooks[0].bookId = 0;
+    bookArray = this.getBooks();
+    if (bookArray.length === 1) {
+      if (bookArray[0].bookId > 0) {
+        bookArray[0].bookId = 0;
       }
     } else {
-      for (let i = bookId; i < newArrayBooks.length; i += 1) {
-        newArrayBooks[bookId].bookId = i;
+      for (let i = bookId; i < bookArray.length; i += 1) {
+        bookArray[bookId].bookId = i;
         bookId += 1;
       }
     }
-    localStorage.setItem('books', JSON.stringify(newArrayBooks));
+    localStorage.setItem('books', JSON.stringify(bookArray));
   }
 
   static deleteBook(el) {
-    if (el.classList.contains('delete')) {
+    if (el.classList.contains('remove-btn')) {
       el.parentElement.remove();
     }
     location.reload();
@@ -84,12 +84,8 @@ class Book {
 
 const newBook = new Book(title, author, id);
 
-// Event: Remove a Book
-document.querySelector('#books-list').addEventListener('click', (e) => {
-  // Remove book from UI
+document.querySelector('#book-div').addEventListener('click', (e) => {
   Book.deleteBook(e.target);
-
-  // Remove book from store
   Book.removeBook(e.target.id);
 });
 
