@@ -1,31 +1,34 @@
-const list = document.getElementById('list-display');
-const addBookInList = document.getElementById('add-new-display');
-const contact = document.getElementById('contact-display');
+const list = document.getElementById('list');
+const add = document.getElementById('add');
+const contact = document.getElementById('contact');
+const allBooks = document.querySelector('.all-books');
+const addingBook = document.querySelector('.adding-book');
+const contactUs = document.querySelector('.contact-us');
 
 const navigation = () => {
   list.addEventListener('click', () => {
-    list.classList.add('active');
-    addBookInList.classList.remove('active');
-    contact.classList.remove('active');
-    document.getElementById('add-book').style.display = 'none';
-    document.getElementById('list').style.display = 'block';
-    document.getElementById('contact').style.display = 'none';
+    list.firstChild.classList.add('active');
+    contact.firstChild.classList.remove('active');
+    add.firstChild.classList.remove('active');
+    addingBook.style.display = 'none';
+    contactUs.style.display = 'none';
+    allBooks.style.display = 'block';
   });
-  addBookInList.addEventListener('click', () => {
-    list.classList.remove('active');
-    addBookInList.classList.add('active');
-    contact.classList.remove('active');
-    document.getElementById('list').style.display = 'none';
-    document.getElementById('add-book').style.display = 'block';
-    document.getElementById('contact').style.display = 'none';
+  add.addEventListener('click', () => {
+    allBooks.style.display = 'none';
+    contactUs.style.display = 'none';
+    addingBook.style.display = 'block';
+    add.firstChild.classList.add('active');
+    list.firstChild.classList.remove('active');
+    contact.firstChild.classList.remove('active');
   });
   contact.addEventListener('click', () => {
-    list.classList.remove('active');
-    addBookInList.classList.remove('active');
-    contact.classList.add('active');
-    document.getElementById('list').style.display = 'none';
-    document.getElementById('add-book').style.display = 'none';
-    document.getElementById('contact').style.display = 'block';
+    allBooks.style.display = 'none';
+    addingBook.style.display = 'none';
+    contactUs.style.display = 'block';
+    contact.firstChild.classList.add('active');
+    list.firstChild.classList.remove('active');
+    add.firstChild.classList.remove('active');
   });
 };
 
